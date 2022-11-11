@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HekimTapModelStoreContainer" CdmEntityContainer="HekimTapEntities">
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="HekimTapModel.About">
+        <MappingFragment StoreEntitySet="Abouts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+          <ScalarProperty Name="Melumat" ColumnName="Melumat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="HekimTapModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Beyanats">
+      <EntityTypeMapping TypeName="HekimTapModel.Beyanat">
+        <MappingFragment StoreEntitySet="Beyanat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ixdisas" ColumnName="Ixdisas" />
+          <ScalarProperty Name="Tehsil" ColumnName="Tehsil" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+          <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clouds">
+      <EntityTypeMapping TypeName="HekimTapModel.Cloud">
+        <MappingFragment StoreEntitySet="Clouds">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="XeberId" ColumnName="XeberId" />
+          <ScalarProperty Name="TeqId" ColumnName="TeqId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="HekimTapModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+          <ScalarProperty Name="Metn" ColumnName="Metn" />
+          <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Ulduzsayi" ColumnName="Ulduzsayi" />
+          <ScalarProperty Name="DoctorsId" ColumnName="DoctorsId" />
+          <ScalarProperty Name="UsersId" ColumnName="UsersId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="HekimTapModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="TelefonNo" ColumnName="TelefonNo" />
+          <ScalarProperty Name="Metn" ColumnName="Metn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorCategories">
+      <EntityTypeMapping TypeName="HekimTapModel.DoctorCategory">
+        <MappingFragment StoreEntitySet="DoctorCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Ikon" ColumnName="Ikon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="HekimTapModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+          <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+          <ScalarProperty Name="Metn" ColumnName="Metn" />
+          <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+          <ScalarProperty Name="Mezmun" ColumnName="Mezmun" />
+          <ScalarProperty Name="NewsCategoriesId" ColumnName="NewsCategoriesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsCategories">
+      <EntityTypeMapping TypeName="HekimTapModel.NewsCategory">
+        <MappingFragment StoreEntitySet="NewsCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personels">
+      <EntityTypeMapping TypeName="HekimTapModel.Personel">
+        <MappingFragment StoreEntitySet="Personel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonelCategories">
+      <EntityTypeMapping TypeName="HekimTapModel.PersonelCategory">
+        <MappingFragment StoreEntitySet="PersonelCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="HekimTapModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+          <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+          <ScalarProperty Name="Metn" ColumnName="Metn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="XeberId" ColumnName="XeberId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervs">
+      <EntityTypeMapping TypeName="HekimTapModel.Rezerv">
+        <MappingFragment StoreEntitySet="Rezervs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tarix" ColumnName="tarix" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ZiyaretId" ColumnName="ZiyaretId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teqs">
+      <EntityTypeMapping TypeName="HekimTapModel.Teq">
+        <MappingFragment StoreEntitySet="Teq">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HekimTapModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TelefonNo" ColumnName="TelefonNo" />
+          <ScalarProperty Name="BankKartAd" ColumnName="BankKartAd" />
+          <ScalarProperty Name="BankKartNo" ColumnName="BankKartNo" />
+          <ScalarProperty Name="KartMuhavizeKod" ColumnName="KartMuhavizeKod" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ziyarets">
+      <EntityTypeMapping TypeName="HekimTapModel.Ziyaret">
+        <MappingFragment StoreEntitySet="Ziyaret">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Novu" ColumnName="Novu" />
+          <ScalarProperty Name="Qiymet" ColumnName="Qiymet" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DoctorsId" ColumnName="DoctorsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="HekimTapModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctors">
+          <ScalarProperty Name="DoctorCategoriesId" ColumnName="DoctorCategoriesId" />
+          <ScalarProperty Name="Baxissayi" ColumnName="Baxissayi" />
+          <ScalarProperty Name="Ixdisas" ColumnName="Ixdisas" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

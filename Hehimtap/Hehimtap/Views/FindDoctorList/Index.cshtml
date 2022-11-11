@@ -1,0 +1,143 @@
+﻿@model List<Hehimtap.Models.Beyanat>
+
+
+@*@using PagedList
+@using PagedList.Mvc
+@using Hehimtap.Models*@
+
+@*@model PagedList.IPagedList<Beyanat>*@
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<main>
+    <div id="results">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+
+                    <h4><strong>Hekim Sayi: @Model.Count</strong></h4>
+                    <br />
+
+
+                </div>
+                @using (Html.BeginForm("Index", "FindDoctorList", FormMethod.Get))
+                {
+                    @*<form action="/FindDoctorList/Axdar" method="post">*@
+                    <div class="col-md-6">
+                        <div class="search_bar_list">
+                            <input type="text" class="form-control" name="p" placeholder="Axdaris etmek ucun hekimin adini daxil edin..">
+
+                            <input type="submit" value="Axdar">
+                        </div>
+                    </div>
+                }
+                @*</form>*@
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /results -->
+    <!--<div class="filters_listing">
+        <div class="container">
+            <ul class="clearfix">
+                <li>
+
+                    <h6>Type</h6>
+                    <div class="switch-field">
+                        <input type="radio" id="all" name="type_patient" value="all" checked>
+                        <label for="all">All</label>
+                        <input type="radio" id="doctors" name="type_patient" value="doctors">
+                        <label for="doctors">Doctors</label>
+                        <input type="radio" id="clinics" name="type_patient" value="clinics">
+                        <label for="clinics">Clinics</label>
+                    </div>
+                </li>
+
+                <li>
+                    <h6>Sort by</h6>
+                    <select name="orderby" class="selectbox">
+                        <option value="Closest">Closest</option>
+                        <option value="Best rated">Best rated</option>
+                        <option value="Men">Men</option>
+                        <option value="Women">Women</option>
+                    </select>
+                </li>
+            </ul>
+        </div>-->
+    <!-- /container -->
+    <!--</div>-->
+    <!-- /filters -->
+
+    <div class="container margin_60_35">
+        <div class="row">
+            <div class="col-lg-7">
+
+                @foreach (var x in Model)
+                {
+
+
+                    <div class="strip_list wow fadeIn">
+                        <a href="#0" class="wish_bt"></a>
+                        <figure>
+                            <a href="@Url.Action("MelumatGetr","FindDoctorList" ,new{Id=x.Id})"><img src="~/Images/@x.Sekil" alt=""></a>
+                        </figure>
+                        <small>@x.Doctor.Ixdisas</small>
+                        <h3>Dr.@x.Doctor.Ad @x.Doctor.Soyad</h3>
+                        <p>@x.Doctor.Mail</p>
+                        <span class="rating">
+                       <small>(@ViewBag.say)</small></span>
+                        <a href="badges.html" data-bs-toggle="tooltip" data-bs-placement="top" title="Badge Level" class="badge_list_1"><img src="img/badges/badge_1.svg" width="15" height="15" alt=""></a>
+                        <ul>
+                            <li><a href="#0" onclick="onHtmlClick('Doctors', 0)" class="btn_listing">Xerite ile bax</a></li>
+                            @*<li><a href="https://www.google.com/maps/dir//Assistance+–+Hôpitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x0:0xa6a9af76b1e2d899!2sAssistance+–+Hôpitaux+De+Paris!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank">Directions</a></li>*@
+                            <li><a href="@Url.Action("MelumatGetr","FindDoctorList" ,new{Id=x.DoctorId})">Acmaq</a></li>
+                        </ul>
+                    </div>
+                }
+
+                <!-- /strip_list -->
+                <!-- /strip_list -->
+
+            <nav class="mt-3">
+                <ul class="pagination pagination-sm">
+                    <li class="page-item disabled">
+                        @if (ViewBag.Page - 1 != 0)
+                        {
+                            <a class="page-link" href="@Url.Action("Index","FindDoctorList",new { page = ViewBag.Page-1  , p = ViewBag.Axtaris})">Əvvəlki</a>
+                        }
+                    </li>
+                    @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                    {
+                        <li class="page-item  @(i==ViewBag.Page?"active":"")"><a class="page-link" href="@Url.Action("Index","FindDoctorList",new { page = i, p = ViewBag.Axtaris })">@i</a></li>
+                    }
+                    <li class="page-item">
+                        @if (ViewBag.Page + 1 <= ViewBag.TotalPage)
+                        {
+                            <a class="page-link" href="@Url.Action("Index","FindDoctorList",new { page = ViewBag.Page+1 , p = ViewBag.Axtaris })">Sonrakı</a>
+                        }
+                    </li>
+                </ul>
+            </nav>
+
+     
+                <!-- /pagination -->
+            </div>
+            <!-- /col -->
+
+            <aside class="col-lg-5" id="sidebar">
+                <div id="map_listing" class="normal_list">
+                </div>
+            </aside>
+            <!-- /aside -->
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
+

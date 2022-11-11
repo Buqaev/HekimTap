@@ -1,0 +1,144 @@
+﻿@model Hehimtap.Models.AboutDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_IsdifadeciLayout.cshtml";
+}
+
+
+
+
+
+
+<main>
+    <div id="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li>Page active</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /breadcrumb -->
+
+    <div class="bg_color_1">
+        <div class="container margin_120_95">
+            <div class="main_title">
+                <h1>Bizim Haqimizda</h1>
+                <p>Elave Melumat Ucun Zeng Ede bilersiz</p>
+            </div>
+            @foreach (var x in Model.Abouts)
+            {
+                <div class="row justify-content-between">
+                    <div class="col-lg-6">
+                        <figure class="add_bottom_30">
+                            <img src="~/Images/@x.Sekil" class="img-fluid" alt="">
+                        </figure>
+                    </div>
+                    <div class="col-lg-5">
+                        <p>@x.Melumat</p>
+                        <p><em>admin</em></p>
+                    </div>
+                </div>
+            }
+            <!--/row-->
+        </div>
+        <!--/container-->
+    </div>
+
+
+    <!--/bg_color_1-->
+
+    <div class="container margin_120_95">
+        <div class="main_title">
+            <h2>Our founders</h2>
+            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+        </div>
+        <div id="staff" class="owl-carousel owl-theme">
+            @foreach (var x in Model.Personels)
+            {
+                <div class="item">
+                    <a href="detail-page.html">
+                        <div class="title">
+                            <h4>@x.Ad @x.Soyad<em>@x.PersonelCategory.Ad</em></h4>
+                        </div><img src="~/Images/@x.Sekil" alt="">
+                    </a>
+                </div>
+            }
+
+
+        </div>
+        <!-- /carousel -->
+    </div>
+    <!--/container-->
+
+    <div class="bg_color_1">
+        <div class="container margin_120_95">
+            <div class="main_title">
+                <h2>Bize Kimler Yazir</h2>
+                <p>Diqqet: Sizde sikayet ve tekliflerinizi bizimle boluse bilersiniz!</p>
+            </div>
+
+            <div class="row">
+                @foreach (var x in Model.contacts)
+                {
+                    <div class="col-md-4 ">
+
+                        <div class="about-review">
+                            <div class="rating">
+                                <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i> <strong>Excellent!</strong>
+                            </div>
+                            <p>"@x.Metn"</p>
+                            <div class="user_review">
+                                <figure><img src="~/Hekim/menu_2/img/avatar.jpg"></figure>
+                                <h4>@x.Ad @x.Soyad<span>@x.Mail</span></h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                }
+            </div>
+
+
+        </div>
+        <!--/container-->
+    </div>
+    <!--/bg_color_1-->
+
+    <div class="container margin_120_95">
+        <div class="main_title">
+            <h2>Findoctor Istatisdikasi</h2>
+            <p>Nezerinize catdiraq ki,Istatisdikamiz mutamadi olaraq yenilenir</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <a class="box_feat_about" href="#0">
+                    <i class="pe-7s-id"></i>
+                    <h3>@ViewBag.personelSay Doctors </h3>
+                    <p>Umumi olaraq klinikamizda xidmet gosderen <strong>Hekim Sayi</strong></p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a class="box_feat_about" href="#0">
+                    <i class="pe-7s-help2"></i>
+                    <h3>@ViewBag.personelSay Personel</h3>
+                    <p>Umumi olaraq klinikamizda xidmet gosderen <strong>Persanal Sayi</strong></p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <a class="box_feat_about" href="#0">
+                    <i class="pe-7s-date"></i>
+                    <h3>@ViewBag.userSay Isdifadeci</h3>
+                    <p>Akdiv olaraq sisdemden isdifade eden  <strong>Musderi Sayi</strong></p>
+                </a>
+            </div>
+
+        </div>
+        <!--/row-->
+    </div>
+    <!-- /container -->
+
+</main>
+

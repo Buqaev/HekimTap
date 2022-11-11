@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<main>
+    <div class="bg_color_2">
+        <div class="container margin_60_35">
+            <div id="register">
+                <h1>Please register to Findoctor!</h1>
+                <div class="row justify-content-center">
+                    <div class="col-md-5">
+                        <form method="post" action="@Url.Action("Create","FindUserLogin")">
+                            <div class="box_form">
+                                <div class="form-group">
+                                    <label>Ad</label>
+                                    <input type="text" name="Ad" class="form-control" placeholder="Senin adin">
+                                </div>
+                                <div class="form-group">
+                                    <label>Soyad</label>
+                                    <input type="text" class="form-control" name="Soyad" placeholder="Senin Soyad">
+                                </div>
+                                <div class="form-group">
+                                    <label>Mail</label>
+                                    <input type="email" name="Mail" class="form-control" placeholder="Senin Meylin">
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefon No</label>
+                                    <input type="tel" name="TelefonNo" class="form-control" placeholder="Senin Telefon Nomren">
+                                </div>
+                                <div class="form-group">
+                                    <label>Sifre</label>
+                                    <input type="password" class="form-control" id="password1" name="Sifre" placeholder="Sifre">
+                                </div>
+
+                                <div id="pass-info" class="clearfix"></div>
+                                <div class="checkbox-holder text-left">
+                                    <div class="checkbox_2">
+                                        <input type="checkbox" value="accept_2" id="check_2" name="check_2" checked>
+                                        <label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center add_top_30">
+                                    <input class="btn_1" type="submit" value="Submit">
+                                </div>
+                            </div>
+                            <p class="text-center"><small>Has voluptua vivendum accusamus cu. Ut per assueverit temporibus dissentiet. Eum no atqui putant democritum, velit nusquam sententiae vis no.</small></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /register -->
+        </div>
+    </div>
+</main>
+

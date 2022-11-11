@@ -1,0 +1,29 @@
+﻿@model  List<Hehimtap.Models.User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Blok edilmis isdifadeciler</h2>
+<br />
+<table class="table table-active">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Duyme</th>
+
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+
+            <td><a class="btn btn-danger" href="@Url.Action("NoBlock","User",new {Id=x.Id })">Berpa Et</a></td>
+        </tr>
+    }
+
+</table>

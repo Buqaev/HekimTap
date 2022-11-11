@@ -1,0 +1,34 @@
+﻿@model Hehimtap.Models.DocProfileDto
+
+@foreach (var x in Model.comments)
+{
+
+
+
+
+
+
+    <div class="active tab-pane" id="activity">
+        <!-- Post -->
+        <div class="post">
+            <div class="user-block">
+                <span class="username">
+                    <a href="#">@x.User.Ad</a>
+                    <a href="@Url.Action("Delete","RegisterDoctor",new {Id=x.Id})" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                </span>
+                <span class="description">@x.Tarix.ToString("dd/mm/yyyy")</span>
+                <span class="description">@x.Basliq</span>
+            </div>
+            <!-- /.user-block -->
+            <p>
+               @x.Metn
+            </p>
+
+            
+
+           
+        </div>
+     
+    </div>
+}
+

@@ -1,0 +1,71 @@
+﻿@model Hehimtap.Models.PersonelDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int a = 1;
+}
+
+<br />
+<a class="btn btn-success" href="@Url.Action("PersonelCreate","Personel")">Personel Yarat</a>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <form method="get" action="@Url.Action("Index","Personel")">
+            Axtaris Et
+            <select name="Id" class="form-control">
+                <option value="">--Butun Kateqoriyalar</option>
+              @foreach (var x in Model.PersonelCategories)
+            
+
+              {
+                    <option value="@x.Id"> @x.Ad</option>
+                }
+
+            </select>
+            <br />
+            <button type="submit" class="btn btn-primary">Axtar</button>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+
+
+<div class="col-md-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Sekil</th>
+                <th>Katiqoryasi</th>
+         
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.Personels)
+            {
+                <tr>
+                    <td>@a</td>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td><img src="~/Images/@x.Sekil" height="50" /></td>
+                    
+                    <td>@x.PersonelCategory.Ad</td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Delete","Personel", new {Id=x.Id })">Sil</a>
+
+                        <a class="btn btn-primary" href="@Url.Action("PersonelUpdate","Personel", new {Id=x.Id })">Yenile</a>
+                    </td>
+                    @{a++;}
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div>

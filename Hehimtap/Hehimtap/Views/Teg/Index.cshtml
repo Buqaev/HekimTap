@@ -1,0 +1,72 @@
+﻿@model List<Hehimtap.Models.Teq>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int a = 1;
+}
+<a class="btn btn-success" href="@Url.Action("TegCreate","Teg")">Teq Et</a>
+<div class="col-md-6">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Teq Adi yarat</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("CreateTeq","Teg")" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" name="Ad" value="" class="form-control" id="exampleInputEmail1" placeholder="Ad Daxil Edin">
+                </div>
+                
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+<table class="table table-active">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Teq Adi</th>
+           
+            
+            <th>Duyme</th>
+        </tr>
+    </thead>
+  @foreach (var x in Model)
+  {
+
+  
+
+<tr>
+    <td>@a</td>
+    <td>@x.Ad</td>
+    
+
+    @*<td><img src="~/Images/@x.News.Sekil" height="50" /></td>*@
+
+    
+    <td>
+        <a class="btn btn-danger" href="@Url.Action("Delete", "Teg",new {Id=x.Id})">Sil</a>
+
+        <a class="btn btn-primary" @*href="@Url.Action("NewsUpdate", "News", new { Id = x.Id }*@>Yenile</a>
+        
+    </td>
+    @{a++;}
+</tr>
+        }
+
+    </table>
+

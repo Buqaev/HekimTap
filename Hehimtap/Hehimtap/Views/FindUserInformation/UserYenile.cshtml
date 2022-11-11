@@ -1,0 +1,73 @@
+﻿@model Hehimtap.Models.User
+@{
+    ViewBag.Title = "UserYenile";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+
+
+
+
+
+
+
+
+<div class="content-wrapper">
+
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="card card-primary">
+            <div class="card-header">
+                <h2>Yenilemek Isdediyiniz Melumatlar</h2>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="post" action="@Url.Action("Yenile","FindUserInformation", new {Id = Model.Id })" enctype="multipart/form-data" role="form">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ad</label>
+                        <input type="text" value="@Model.Ad" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Soyad</label>
+                        <input type="text" name="Soyad" value="@Model.Soyad" class="form-control" id="exampleInputEmail1" placeholder="Ad Metn Edin">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Mail</label>
+                        <input type="text" name="Mail" value="@Model.Mail" class="form-control" id="exampleInputEmail1" placeholder="Ad Metn Edin">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Telefon</label>
+                        <input type="text" name="TelefonNo" value="@Model.TelefonNo" class="form-control" id="exampleInputEmail1" placeholder="Ad Metn Edin">
+                    </div>
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Sifre</label>
+                        <input type="text" name="Sifre" value="@Model.Sifre" class="form-control" id="exampleInputEmail1" placeholder="Ad Metn Edin">
+                    </div>
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Yenile</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.card -->
+        <!-- Form Element sizes -->
+
+
+
+    </div>
+</div>
+
+

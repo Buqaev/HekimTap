@@ -1,0 +1,92 @@
+﻿@model List< Hehimtap.Models.Admin>
+@{
+    ViewBag.Title = "GetContact";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<main>
+    <div id="map_contact"></div>
+    <!-- /map -->
+
+    <div class="container margin_60_35">
+        <div class="row">
+            <aside class="col-lg-3 col-md-4">
+                <div id="contact_info">
+                    <h3>Elaqe Ucun Melumat</h3>
+                    <p>
+                        Azerbaycan Baki Seheri <br> Hesenbey Zerdabi (12)<br>
+                        <a href="#">Melumat@domain.com</a>
+                    </p>
+                   
+                    
+                    <ul>
+                        <li>
+                            <strong>Admin</strong>
+                            <a href="tel://003823932342">0038 23932342</a><br>
+                            @foreach (var x in Model)
+                            {
+                                <a href="tel://003823932342">@x.Mail</a>
+                            }
+
+                            <br>
+                            <small>Is Saati: BazarErtesi - Cume (9-00) - (19-00)</small>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </aside>
+            <!--/aside -->
+            <div class=" col-lg-8 col-md-8 ml-auto">
+                <div class="box_general">
+                    <h3>Elaqe Ucun</h3>
+                    <p>
+                       Sikayet ve tekliflerinizi bize gondere bilersiz
+                    </p>
+                    <div>
+                        <div id="message-contact"></div>
+                        <form method="post" action="@Url.Action("Contact","FinDoctor")"  id="contactform">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text"  class="form-control" id="name_contact" name="Ad" placeholder="Ad">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="lastname_contact" name="Soyad" placeholder="Soyad">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" id="email_contact" name="Mail" class="form-control" placeholder="Mail">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" id="phone_contact" name="TelefonNo" class="form-control" placeholder="Telefon NO:">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea rows="5" id="message_contact" name="Metn" class="form-control" style="height:100px;" placeholder="Sikayet Ve Teklifleriniz"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <input type="submit" value="Submit" class="btn_1 add_top_20" id="submit-contact">
+                        </form>
+                    </div>
+                    <!-- /col -->
+                </div>
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- End row -->
+    </div>
+    <!-- /container -->
+</main>
+

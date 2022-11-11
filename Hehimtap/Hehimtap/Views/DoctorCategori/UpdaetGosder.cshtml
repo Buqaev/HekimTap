@@ -1,0 +1,46 @@
+﻿@model Hehimtap.Models.DoctorCategory
+@{
+    ViewBag.Title = "UpdaetGosder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Xeber Yenile</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Update","DoctorCategori", new {Id = Model.Id })"  enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" value="@Model.Ad" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+              
+
+                
+
+                <img src="~/Images/@Model.Ikon" height="150" />
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ikon</label>
+                    <input type="file" name="Sekil" class="form-control" id="exampleInputEmail1">
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yenile</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+

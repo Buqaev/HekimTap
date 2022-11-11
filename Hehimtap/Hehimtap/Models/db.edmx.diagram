@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="62c366f59ca944f98535730d0fcf6a4e" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="HekimTapModel.About" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Admin" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Beyanat" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Cloud" Width="1.5" PointX="14.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Comment" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Contact" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.DoctorCategory" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.News" Width="1.5" PointX="12" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.NewsCategory" Width="1.5" PointX="9.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Personel" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.PersonelCategory" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Review" Width="1.5" PointX="14.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Rezerv" Width="1.5" PointX="7.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Teq" Width="1.5" PointX="12" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.User" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HekimTapModel.Ziyaret" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="HekimTapModel.FK_Clouds_News" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Clouds_Teq" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Comments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_News_NewsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Reviews_News" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_NewsCategories_NewsCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Personel_PersonelCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Reviews_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Rezervs_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="HekimTapModel.FK_Rezervs_Ziyaret" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HekimTapModel.Doctor" Width="1.5" PointX="3" PointY="3.875" />
+        <AssociationConnector Association="HekimTapModel.FK_Beyanat_Doctors" />
+        <AssociationConnector Association="HekimTapModel.FK_Comments_Doctors" />
+        <AssociationConnector Association="HekimTapModel.FK_Doctors_DoctorCategories" />
+        <AssociationConnector Association="HekimTapModel.FK_Ziyaret_Doctors" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,62 @@
+﻿@model Hehimtap.Models.Personel
+@{
+    ViewBag.Title = "PersonelUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h2>Personel Melumat Yenile</h2>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Update","Personel", new {Id = Model.Id })"  enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" value="@Model.Ad" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Basliq Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Soyad</label>
+                    <input type="text" name="Soyad" value="@Model.Soyad" class="form-control" id="exampleInputEmail1" placeholder="Ad Metn Edin">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kateqoriya</label>
+                    <select name="PersonelId" class="form-control">
+                         @*CategoryId*@
+                        <option>--Secin</option>
+                        @foreach (var x in ViewBag.per)
+                        {
+                            @*<option @if (cat.Id == Model.CategoryId) { "selected"} else { ""} value="@cat.Id">@cat.Name</option>*@
+                            <option @(x.Id == Model.PersonelId ? "selected" : " ") value="@x.Id">@x.Ad</option>
+                        }
+
+                    </select>
+                </div>
+
+                <img src="~/Images/@Model.Sekil" height="150" />
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sekil</label>
+                    <input type="file" name="Sekil" class="form-control" id="exampleInputEmail1">
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yenile</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>

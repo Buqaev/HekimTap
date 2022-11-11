@@ -1,0 +1,75 @@
+﻿@model Hehimtap.Models.NewsDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int a = 1;
+}
+
+<br />
+<a class="btn btn-success" href="@Url.Action("NewsCreate","News")">Xeber Yarat</a>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <form method="get" action="@Url.Action("Index","News")">
+            Axtaris Et
+            <select name="Id" class="form-control">
+                <option value="">--Butun Kateqoriyalar</option>
+                @foreach (var x in Model.NewsCategories)
+
+                {
+                    <option value="@x.Id"> @x.Ad</option>
+                }
+
+            </select>
+            <br />
+            <button type="submit" class="btn btn-primary">Axtar</button>
+        </form>
+    </div>
+</div>
+<br />
+<br />
+
+<h2>Xeber Siyahisi</h2>
+<br />
+<div class="row"><div class="col-md-12">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Basliq</th>
+                <th>Metn</th>
+                <th>Tarix</th>
+                <th>Mezmun</th>
+                <th>Sekil</th>
+                <th>Katiqoryasi</th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.News)
+            {
+                <tr>
+                    <td>@a</td>
+                    <td>@x.Basliq</td>
+                    <td>@x.Metn</td>
+                    <td>@x.Tarix</td>
+                    <td>@x.Mezmun</td>
+                    <td><img src="~/Images/@x.Sekil" height="50" /></td>
+
+                    <td>@x.NewsCategory.Ad</td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Remove","News", new {Id=x.Id })">Sil</a>
+
+                        <a class="btn btn-primary" href="@Url.Action("NewsUpdate","News", new {Id=x.Id })">Yenile</a>
+                    </td>
+                    @{a++;}
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+</div></div>

@@ -1,0 +1,48 @@
+﻿@model List<Hehimtap.Models.Admin>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int a = 1;
+}
+
+<h2>Admin Melumati</h2>
+<div class="row">
+    <div class="col-md-8">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Mail</th>
+                    <th>Sifre</th>
+                    <th>Melumatlari Yenile</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+
+                {
+                    <tr>
+                        <td>@a</td>
+                        <td>@x.Ad</td>
+                        <td>@x.Soyad</td>
+                        <td>@x.Mail</td>
+                        <td>@x.Sifre</td>
+                        <td>
+
+
+                            <a class="btn btn-primary" href="@Url.Action("UpdateAdmin","Admin", new {Id=x.Id })">Yenile</a>
+                        </td>
+                        @{a++;}
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

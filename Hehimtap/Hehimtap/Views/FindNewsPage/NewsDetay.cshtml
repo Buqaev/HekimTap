@@ -1,0 +1,168 @@
+﻿@model Hehimtap.Models.NewsdetailDto
+@{
+    ViewBag.Title = "NewsDetay";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<main>
+    <div id="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="@Url.Action("Index","FindNewsPage")">Xeberller</a></li>
+                
+                    <li><a href="@Url.Action("NewsDetay","FindNewsPage")">XeberDetay</a></li>
+                
+
+            </ul>
+        </div>
+    </div>
+    <!-- /breadcrumb -->
+
+    <div class="container margin_60">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="bloglist singlepost">
+                    <p><img alt="" class="img-fluid" src="~/Images/@Model.news2.Sekil"></p>
+                    <h1>Medical treatments</h1>
+                    <div class="postmeta">
+                        <ul>
+                            <li><a href="#"><i class="icon_folder-alt"></i> @Model.news2.Basliq</a></li>
+                            <li><a href="#"><i class="icon_clock_alt"></i> @Model.news2.Tarix.ToString("dd/mm/yyyy")</a></li>
+                            <li><a href="#"><i class="icon_pencil-edit"></i> Admin</a></li>
+                            <li><a href="#"><i class="icon_comment_alt"></i> (@ViewBag.ReviewSay) Comments</a></li>
+                        </ul>
+                    </div>
+                    <!-- /post meta -->
+                    <div class="post-content">
+                        <div class="dropcaps">
+                            <p>@Model.news2.Mezmun</p>
+                        </div>
+
+                        <p>@Model.news2.Metn</p>
+                    </div>
+                    <!-- /post -->
+                </div>
+                <!-- /single-post -->
+
+                <div id="comments">
+                    <h5>Şərhlər</h5>
+                    <ul>
+                        @foreach (var x in Model.Reviews)
+                        {
+                            <li>
+                                <div class="avatar">
+                                    <a href="#">
+                                        <img src="~/Hekim/menu_2/img/avatar.jpg" alt="">
+                                    </a>
+                                </div>
+
+
+
+                                <div class="comment_right clearfix">
+                                    <div class="comment_info">
+                                        By <a href="#">@x.User.Ad</a><span>|</span>@x.Tarix.ToString("dd/mm/yyyy")<span>|</span>@x.Basliq
+                                    </div>
+                                    <p>
+                                        @x.Metn
+                                    </p>
+                                </div>
+
+
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <hr>
+
+                <h5>Leave a Comment</h5>
+                <form method="post" action="@Url.Action("NewsDetay","FindNewsPage",new {Id=Model.news2.Id })">
+                    <div class="form-group">
+                        <input type="text" name="Basliq" id="email2" class="form-control" placeholder="Basliq">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Metn" id="website3" class="form-control" placeholder="Metn">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" id="submit2" class="btn_1"> Submit</button>
+                    </div>
+                    @*<div class="form-group">
+                        <a href="@Url.Action("Index","FindLoginUser")" type="submit" id="submit2" class="btn_1"> Gonder </a>
+                    </div>*@
+                </form>
+            </div>
+            <!-- /col -->
+
+            <aside class="col-lg-3">
+                <div class="widget">
+                    <form method="post" action="@Url.Action("Index","FindNewsPage")">
+                        <div class="form-group">
+                            <input type="text" name="p" id="search" class="form-control" placeholder="Xeberin adini daxil edin">
+                        </div>
+                        <button type="submit" id="submit" class="btn_1"> Axdar</button>
+                    </form>
+                </div>
+                <!-- /widget -->
+
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Xeber Postu</h4>
+                    </div>
+                    <ul class="comments-list">
+                        @foreach (var x in Model.news3)
+                        {
+                            <li>
+                                <div class="alignleft">
+                                    <a href="#0"><img src="img/blog-5.jpg" alt=""></a>
+                                </div>
+                                <small>11.08.2016</small>
+                                <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                            </li>
+                        }
+
+                        </ul>
+                </div>
+                <!-- /widget -->
+
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Blog Categories</h4>
+                    </div>
+                    <ul class="cats">
+                        @foreach (var x in Model.newsCategories)
+                        {
+                            <li><a href="@Url.Action("Index","FindNewsPage", new {CatId =x.Id})">@x.Ad <span>(@x.News.Count())</span></a></li>
+                        }
+
+
+                    </ul>
+                </div>
+                <!-- /widget -->
+
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Popular Tags</h4>
+                    </div>
+                    <div class="tags">
+                        @foreach (var x in Model.Teqs)
+                        {
+                            <a href="@Url.Action("Index","FindNewsPage", new {TagId = x.Id })">@x.Ad</a>
+                        }
+
+
+                    </div>
+                </div>
+                <!-- /widget -->
+
+            </aside>
+            <!-- /aside -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
+

@@ -1,0 +1,33 @@
+﻿@model Hehimtap.Models.Comment
+@{
+    ViewBag.Title = "ComenList";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+
+
+
+    <div class="active tab-pane" id="activity">
+        <!-- Post -->
+        <div class="post">
+            <div class="user-block">
+                <span class="username">
+                    <a href="#">@Model.User.Ad</a>
+                    <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                </span>
+                <span class="description">@Model.Tarix.ToString("dd/mm/yyyy")</span>
+                <span class="description">@Model.Basliq</span>
+            </div>
+            <!-- /.user-block -->
+            <p>
+                @Model.Metn
+            </p>
+
+
+
+
+        </div>
+
+    </div>
+
+

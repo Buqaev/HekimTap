@@ -1,0 +1,181 @@
+﻿@model Hehimtap.Models.NewsdetailDto
+@{
+    ViewBag.Title = "NewsDetay";
+    Layout = "~/Views/Shared/_IsdifadeciLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<main>
+    <div id="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Category</a></li>
+                <li>Page active</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /breadcrumb -->
+
+    <div class="container margin_60">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="bloglist singlepost">
+                    <p><img alt="" class="img-fluid" src="~/Images/@Model.news.Sekil"></p>
+                    <h1>Medical treatments</h1>
+                    <div class="postmeta">
+                        <ul>
+                            <li><a href="#"><i class="icon_folder-alt"></i> @Model.news.Basliq</a></li>
+                            <li><a href="#"><i class="icon_clock_alt"></i> @Model.news.Tarix.ToString("dd/mm/yyyy")</a></li>
+                            <li><a href="#"><i class="icon_pencil-edit"></i> Admin</a></li>
+                            <li><a href="#"><i class="icon_comment_alt"></i> (@ViewBag.ReviewSay) Comments</a></li>
+                        </ul>
+                    </div>
+                    <!-- /post meta -->
+                    <div class="post-content">
+                        <div class="dropcaps">
+                            <p>@Model.news.Mezmun</p>
+                        </div>
+
+                        <p>@Model.news.Metn</p>
+                    </div>
+                    <!-- /post -->
+                </div>
+                <!-- /single-post -->
+
+                <div id="comments">
+                    <h5>Şərhlər</h5>
+                    <ul>
+                        @foreach (var x in Model.Reviews)
+                        {
+                            <li>
+                                <div class="avatar">
+                                    <a href="#">
+                                        <img src="~/Hekim/menu_2/img/avatar.jpg" alt="">
+                                    </a>
+                                </div>
+
+
+
+                                <div class="comment_right clearfix">
+                                    <div class="comment_info">
+                                        By <a href="#">@x.User.Ad</a><span>|</span>@x.Tarix.ToString("dd/mm/yyyy")<span>|</span>@x.Basliq
+                                    </div>
+                                    <p>
+                                        @x.Metn
+                                    </p>
+                                </div>
+
+
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+                <hr>
+
+                <h5>Leave a Comment</h5>
+
+                @*@Html.Action("SendReview", "FindXeberler")*@
+                <h2>Adi</h2>
+                <form method="post" action="@Url.Action("NewsDetay","FindXeberler",new {Id=Model.news.Id })">
+
+                    <div class="form-group">
+                        <input type="text" name="Basliq" id="email2" class="form-control" placeholder="Basliq">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Metn" id="website3" class="form-control" placeholder="Metn">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" id="submit2" class="btn_1"> Submit</button>
+                    </div>
+                </form>
+
+            </div>
+            <!-- /col -->
+
+            <aside class="col-lg-3">
+                <div class="widget">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+                        </div>
+                        <button type="submit" id="submit" class="btn_1"> Search</button>
+                    </form>
+                </div>
+                <!-- /widget -->
+
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Recent Posts</h4>
+                    </div>
+                    <ul class="comments-list">
+                        <li>
+                            <div class="alignleft">
+                                <a href="#0"><img src="img/blog-5.jpg" alt=""></a>
+                            </div>
+                            <small>11.08.2016</small>
+                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                        </li>
+                        <li>
+                            <div class="alignleft">
+                                <a href="#0"><img src="img/blog-6.jpg" alt=""></a>
+                            </div>
+                            <small>11.08.2016</small>
+                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                        </li>
+                        <li>
+                            <div class="alignleft">
+                                <a href="#0"><img src="img/blog-4.jpg" alt=""></a>
+                            </div>
+                            <small>11.08.2016</small>
+                            <h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /widget -->
+
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Blog Categories</h4>
+                    </div>
+                    @*<ul class="cats">
+                        <li><a href="#">Treatments <span>(@ViewBag.cs)</span></a></li>
+                        <li><a href="#">News <span>(@ViewBag.cs)</span></a></li>
+                        <li><a href="#">Events <span>(44)</span></a></li>
+                        <li><a href="#">New treatments <span>(09)</span></a></li>
+                        <li><a href="#">Focus in the lab <span>(31)</span></a></li>
+                    </ul>*@
+                </div>
+                <!-- /widget -->
+
+                <div class="widget">
+                    <div class="widget-title">
+                        <h4>Popular Tags</h4>
+                    </div>
+                    <div class="tags">
+                        <a href="#">Medicine</a>
+                        <a href="#">Treatments</a>
+                        <a href="#">Events</a>
+                        <a href="#">Specialist</a>
+                        <a href="#">Pills</a>
+                        <a href="#">Cancer</a>
+                    </div>
+                </div>
+                <!-- /widget -->
+
+            </aside>
+            <!-- /aside -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</main>
+
+
+

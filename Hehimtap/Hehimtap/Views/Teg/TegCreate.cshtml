@@ -1,0 +1,61 @@
+﻿@model Hehimtap.Models.CloudDto
+@{
+    ViewBag.Title = "TegCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Yeni Xeber Yarat</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Create","Teg")" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Xeber Adi</label>
+                    <select name="NewsCategoriesId" class="form-control">
+                        <option>--Secin</option>
+                       @foreach (var x in Model.News)
+
+                       {
+                            <option value="@x.Id">@x.Basliq</option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Teq Adi</label>
+                    <select name="NewsCategoriesId" class="form-control">
+                        <option>--Secin</option>
+                        @foreach (var x in Model.Teqs)
+
+                        {
+                            <option value="@x.Id">@x.Ad</option>
+                        }
+
+                    </select>
+                </div>
+
+                
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+

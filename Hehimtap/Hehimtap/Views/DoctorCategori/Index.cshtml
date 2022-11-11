@@ -1,0 +1,82 @@
+﻿@model List<Hehimtap.Models.DoctorCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int a = 1;
+}
+
+
+<div class="col-md-6">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">HekimKateqoriya Yarat</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Create","DoctorCategori")" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Daxil Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ikon</label>
+                    <input type="file" name="Sekil" class="form-control" id="exampleInputEmail1">
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+<br />
+
+<h2>HekimKateqoriya Siyahisi</h2>
+<div class="row">
+  
+          <div class="col-md-12">
+              <br />
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th style="width: 10px">#</th>
+                          <th>Ad</th>
+                          <th>Ikon</th>
+                          <th>Melumati Sil</th>
+                          <th>Melumati Yenile</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach (var x in Model)
+                      {
+                      <tr>
+                          <td>@a</td>
+                          <td>@x.Ad</td>
+                          <td><img src="~/Images/@x.Ikon" height="50" /></td>
+
+                          <td><a class="btn btn-danger" href="@Url.Action("Delete","DoctorCategori", new {Id=x.Id })">Sil</a></td>
+                          <td><a class="btn btn-info" href="@Url.Action("UpdaetGosder","DoctorCategori", new {Id=x.Id })">Yenileme</a></td>
+
+                          @{a++;}
+                      </tr>
+                      }
+
+
+                  </tbody>
+              </table>
+          </div>
+    <!-- left column -->
+
+
+</div>
+

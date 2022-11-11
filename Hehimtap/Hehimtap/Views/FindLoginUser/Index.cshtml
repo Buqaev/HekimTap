@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_PanelLayout.cshtml";
+}
+
+<main>
+    <div class="bg_color_2">
+        <div class="container margin_60_35">
+            <div id="login">
+                <h1>Zəhmət olmasa Findoctor-a daxil olun!</h1>
+                <div class="box_form">
+                    
+                    <form method="post" action="@Url.Action("Login","FindLoginUser")">
+                        <a href="#0" class="social_bt facebook">Facebook ilə daxil olun</a>
+                        <a href="#0" class="social_bt google">Google ilə daxil olun</a>
+                        <a href="#0" class="social_bt linkedin">Linkedin ilə daxil olun</a>
+                        <div class="divider"><span>Və ya</span></div>
+                        <div class="form-group">
+                            <input type="email" name="Mail" class="form-control" placeholder="Your email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Your password" name="Sifre" id="password">
+                        </div>
+
+                        <div class="form-group text-center add_top_20">
+                            <input class="btn_1 medium" type="submit" value="Daxil ol">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <!-- /login -->
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,43 @@
+﻿@model List<Hehimtap.Models.Doctor>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hekim Siyahisi</h2>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Mail</th>
+                    <th>Telefon No</th>
+                    <th>Unvan</th>
+                    <th>Ixdisas</th>
+                    <th>Baxis Sayi</th>
+                    <th>Sifre</th>
+                    <th>Duyme</th>
+                </tr>
+            </thead>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Ad</td>
+                    <td>@x.Soyad</td>
+                    <td>@x.Mail</td>
+                    <td>@x.Telefon</td>
+                    <td>@x.Unvan</td>
+                    <td>@x.Ixdisas</td>
+                    <td>@x.Baxissayi</td>
+                    <td>@x.Sifre</td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.Action("Delete","Doctor",new {Id=x.Id })">Sil</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

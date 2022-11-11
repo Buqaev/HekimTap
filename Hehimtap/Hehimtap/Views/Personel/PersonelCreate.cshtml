@@ -1,0 +1,57 @@
+﻿@model List<Hehimtap.Models.PersonelCategory>
+@{
+    ViewBag.Title = "PersonelCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">Yeni Personel Yarat</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Create","Personel")" enctype="multipart/form-data" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Elave Edin">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Soyad</label>
+                    <input type="text" name="Soyad" class="form-control" id="exampleInputEmail1" placeholder="Soyad Elave Edin">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kateqoriya</label>
+                    <select name="PersonelId" class="form-control">
+                        <option>--Secin</option>
+                        @foreach (var x in Model)
+                        {
+                            <option value="@x.Id">@x.Ad</option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Sekil</label>
+                    <input type="file" name="Sekil" class="form-control" id="exampleInputEmail1">
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+

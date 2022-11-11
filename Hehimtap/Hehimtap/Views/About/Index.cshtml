@@ -1,0 +1,37 @@
+﻿@model List<Hehimtap.Models.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<a class="btn btn-success" href="@Url.Action("CreateAbout","About")">Melumat Yarat</a>
+
+<h2>Haqimizda Sifesi</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <header>
+            <tr>
+                <th>Melumat</th>
+                <th>Sekil</th>
+                <th>Duyme</th>
+                <th>Duyme</th>
+            </tr>
+            </header>
+
+            @foreach (var x in Model)
+            {
+        <tr>
+            <td>@x.Melumat</td>
+            <td><img src="~/Images/@x.Sekil" height="50" /></td>
+
+            <td><a class="btn btn-danger" href="@Url.Action("Remove","About", new {Id=x.Id })">Sil</a></td>
+
+            
+            <td><a class="btn btn-primary" href="@Url.Action("AboutUpdate","About", new {Id=x.Id })">Yenile</a></td>
+        </tr>
+            }
+        </table>
+    </div>
+</div>

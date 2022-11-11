@@ -1,0 +1,80 @@
+﻿@model List<Hehimtap.Models.NewsCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int a = 1;
+}
+
+
+<div class="col-md-6">
+    <!-- general form elements -->
+    <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">XeberKateqoriya Yarat</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="post" action="@Url.Action("Create","NewsCategori")" role="form">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ad</label>
+                    <input type="text" name="Ad" class="form-control" id="exampleInputEmail1" placeholder="Ad Daxil Edin">
+                </div>
+
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Yarat</button>
+            </div>
+        </form>
+        <br />
+
+        <h2 style="text-align:center;">XeberKateqoriya Siyahisi</h2>
+    </div>
+    <!-- /.card -->
+    <!-- Form Element sizes -->
+
+
+
+</div>
+
+<div class="row">
+
+    <div class="col-md-8">
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Ad</th>
+                    <th>Duyme</th>
+                    <th>Duyme</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@a</td>
+                        <td>@x.Ad</td>
+
+
+                        <td><a class="btn btn-danger" href="@Url.Action("Delete","NewsCategori", new {Id=x.Id })">Sil</a></td>
+                        <td><a class="btn btn-info" href="@Url.Action("UpdateCategori","NewsCategori", new {Id=x.Id })">Yenileme</a></td>
+
+                        @{a++;}
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- left column -->
+
+
+</div>
+

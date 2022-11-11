@@ -1,0 +1,1112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HekimTapModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Abouts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sekil" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Melumat" Type="ntext" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Beyanat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ixdisas" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tehsil" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Sekil" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DoctorId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clouds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="XeberId" Type="int" Nullable="false" />
+          <Property Name="TeqId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Basliq" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Metn" Type="ntext" Nullable="false" />
+          <Property Name="Tarix" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Ulduzsayi" Type="int" Nullable="false" />
+          <Property Name="DoctorsId" Type="int" Nullable="false" />
+          <Property Name="UsersId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="TelefonNo" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Metn" Type="ntext" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Ikon" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Unvan" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ixdisas" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Baxissayi" Type="int" Nullable="false" />
+          <Property Name="DoctorCategoriesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Basliq" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sekil" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Metn" Type="ntext" Nullable="false" />
+          <Property Name="Tarix" Type="datetime" Nullable="false" />
+          <Property Name="Mezmun" Type="ntext" Nullable="false" />
+          <Property Name="NewsCategoriesId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewsCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Sekil" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="PersonelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonelCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Basliq" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tarix" Type="datetime" Nullable="false" />
+          <Property Name="Metn" Type="ntext" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="XeberId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rezervs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tarix" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ZiyaretId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teq">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="TelefonNo" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="BankKartAd" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BankKartNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="KartMuhavizeKod" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ziyaret">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Novu" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Qiymet" Type="int" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="DoctorsId" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Beyanat_Doctors">
+          <End Role="Doctors" Type="Self.Doctors" Multiplicity="1" />
+          <End Role="Beyanat" Type="Self.Beyanat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Beyanat">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clouds_News">
+          <End Role="News" Type="Self.News" Multiplicity="1" />
+          <End Role="Clouds" Type="Self.Clouds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clouds">
+              <PropertyRef Name="XeberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clouds_Teq">
+          <End Role="Teq" Type="Self.Teq" Multiplicity="1" />
+          <End Role="Clouds" Type="Self.Clouds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teq">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clouds">
+              <PropertyRef Name="TeqId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_Doctors">
+          <End Role="Doctors" Type="Self.Doctors" Multiplicity="1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="DoctorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="UsersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctors_DoctorCategories">
+          <End Role="DoctorCategories" Type="Self.DoctorCategories" Multiplicity="1" />
+          <End Role="Doctors" Type="Self.Doctors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoctorCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Doctors">
+              <PropertyRef Name="DoctorCategoriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_NewsCategories">
+          <End Role="NewsCategories" Type="Self.NewsCategories" Multiplicity="1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="NewsCategoriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsCategories_NewsCategories">
+          <End Role="NewsCategories" Type="Self.NewsCategories" Multiplicity="1" />
+          <End Role="NewsCategories1" Type="Self.NewsCategories" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsCategories1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_PersonelCategories">
+          <End Role="PersonelCategories" Type="Self.PersonelCategories" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonelCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_News">
+          <End Role="News" Type="Self.News" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="XeberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervs_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Rezervs" Type="Self.Rezervs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rezervs">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervs_Ziyaret">
+          <End Role="Ziyaret" Type="Self.Ziyaret" Multiplicity="1" />
+          <End Role="Rezervs" Type="Self.Rezervs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ziyaret">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rezervs">
+              <PropertyRef Name="ZiyaretId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ziyaret_Doctors">
+          <End Role="Doctors" Type="Self.Doctors" Multiplicity="1" />
+          <End Role="Ziyaret" Type="Self.Ziyaret" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ziyaret">
+              <PropertyRef Name="DoctorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HekimTapModelStoreContainer">
+          <EntitySet Name="Abouts" EntityType="Self.Abouts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Beyanat" EntityType="Self.Beyanat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clouds" EntityType="Self.Clouds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DoctorCategories" EntityType="Self.DoctorCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Doctors" EntityType="Self.Doctors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsCategories" EntityType="Self.NewsCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonelCategories" EntityType="Self.PersonelCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rezervs" EntityType="Self.Rezervs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teq" EntityType="Self.Teq" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ziyaret" EntityType="Self.Ziyaret" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Beyanat_Doctors" Association="Self.FK_Beyanat_Doctors">
+            <End Role="Doctors" EntitySet="Doctors" />
+            <End Role="Beyanat" EntitySet="Beyanat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clouds_News" Association="Self.FK_Clouds_News">
+            <End Role="News" EntitySet="News" />
+            <End Role="Clouds" EntitySet="Clouds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clouds_Teq" Association="Self.FK_Clouds_Teq">
+            <End Role="Teq" EntitySet="Teq" />
+            <End Role="Clouds" EntitySet="Clouds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_Doctors" Association="Self.FK_Comments_Doctors">
+            <End Role="Doctors" EntitySet="Doctors" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_Users" Association="Self.FK_Comments_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctors_DoctorCategories" Association="Self.FK_Doctors_DoctorCategories">
+            <End Role="DoctorCategories" EntitySet="DoctorCategories" />
+            <End Role="Doctors" EntitySet="Doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_NewsCategories" Association="Self.FK_News_NewsCategories">
+            <End Role="NewsCategories" EntitySet="NewsCategories" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsCategories_NewsCategories" Association="Self.FK_NewsCategories_NewsCategories">
+            <End Role="NewsCategories" EntitySet="NewsCategories" />
+            <End Role="NewsCategories1" EntitySet="NewsCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_PersonelCategories" Association="Self.FK_Personel_PersonelCategories">
+            <End Role="PersonelCategories" EntitySet="PersonelCategories" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_News" Association="Self.FK_Reviews_News">
+            <End Role="News" EntitySet="News" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Users" Association="Self.FK_Reviews_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervs_Users" Association="Self.FK_Rezervs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Rezervs" EntitySet="Rezervs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervs_Ziyaret" Association="Self.FK_Rezervs_Ziyaret">
+            <End Role="Ziyaret" EntitySet="Ziyaret" />
+            <End Role="Rezervs" EntitySet="Rezervs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ziyaret_Doctors" Association="Self.FK_Ziyaret_Doctors">
+            <End Role="Doctors" EntitySet="Doctors" />
+            <End Role="Ziyaret" EntitySet="Ziyaret" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HekimTapModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sekil" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Melumat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Beyanat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ixdisas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tehsil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Sekil" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DoctorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Doctor" Relationship="HekimTapModel.FK_Beyanat_Doctors" FromRole="Beyanat" ToRole="Doctor" />
+        </EntityType>
+        <EntityType Name="Cloud">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="XeberId" Type="Int32" Nullable="false" />
+          <Property Name="TeqId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="News" Relationship="Self.FK_Clouds_News" FromRole="Clouds" ToRole="News" />
+          <NavigationProperty Name="Teq" Relationship="Self.FK_Clouds_Teq" FromRole="Clouds" ToRole="Teq" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Basliq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Metn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tarix" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Ulduzsayi" Type="Int32" Nullable="false" />
+          <Property Name="DoctorsId" Type="Int32" Nullable="false" />
+          <Property Name="UsersId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Comments_Users" FromRole="Comments" ToRole="Users" />
+          <NavigationProperty Name="Doctor" Relationship="HekimTapModel.FK_Comments_Doctors" FromRole="Comment" ToRole="Doctor" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TelefonNo" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Metn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DoctorCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Ikon" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Doctors" Relationship="HekimTapModel.FK_Doctors_DoctorCategories" FromRole="DoctorCategory" ToRole="Doctor" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Basliq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sekil" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Metn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tarix" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mezmun" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NewsCategoriesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clouds" Relationship="Self.FK_Clouds_News" FromRole="News" ToRole="Clouds" />
+          <NavigationProperty Name="NewsCategory" Relationship="Self.FK_News_NewsCategories" FromRole="News" ToRole="NewsCategories" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_News" FromRole="News" ToRole="Reviews" />
+        </EntityType>
+        <EntityType Name="NewsCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="News" Relationship="Self.FK_News_NewsCategories" FromRole="NewsCategories" ToRole="News" />
+          <NavigationProperty Name="NewsCategories1" Relationship="Self.FK_NewsCategories_NewsCategories" FromRole="NewsCategories" ToRole="NewsCategories1" />
+          <NavigationProperty Name="NewsCategory1" Relationship="Self.FK_NewsCategories_NewsCategories" FromRole="NewsCategories1" ToRole="NewsCategories" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Sekil" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PersonelCategory" Relationship="Self.FK_Personel_PersonelCategories" FromRole="Personel" ToRole="PersonelCategories" />
+        </EntityType>
+        <EntityType Name="PersonelCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Personels" Relationship="Self.FK_Personel_PersonelCategories" FromRole="PersonelCategories" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Basliq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tarix" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Metn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="XeberId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="News" Relationship="Self.FK_Reviews_News" FromRole="Reviews" ToRole="News" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Reviews_Users" FromRole="Reviews" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Rezerv">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tarix" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ZiyaretId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Rezervs_Users" FromRole="Rezervs" ToRole="Users" />
+          <NavigationProperty Name="Ziyaret" Relationship="Self.FK_Rezervs_Ziyaret" FromRole="Rezervs" ToRole="Ziyaret" />
+        </EntityType>
+        <EntityType Name="Teq">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Clouds" Relationship="Self.FK_Clouds_Teq" FromRole="Teq" ToRole="Clouds" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="TelefonNo" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BankKartAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BankKartNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KartMuhavizeKod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Users" FromRole="Users" ToRole="Comments" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_Users" FromRole="Users" ToRole="Reviews" />
+          <NavigationProperty Name="Rezervs" Relationship="Self.FK_Rezervs_Users" FromRole="Users" ToRole="Rezervs" />
+        </EntityType>
+        <EntityType Name="Ziyaret">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Novu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Qiymet" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="DoctorsId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rezervs" Relationship="Self.FK_Rezervs_Ziyaret" FromRole="Ziyaret" ToRole="Rezervs" />
+          <NavigationProperty Name="Doctor" Relationship="HekimTapModel.FK_Ziyaret_Doctors" FromRole="Ziyaret" ToRole="Doctor" />
+        </EntityType>
+        <Association Name="FK_Clouds_News">
+          <End Role="News" Type="Self.News" Multiplicity="1" />
+          <End Role="Clouds" Type="Self.Cloud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clouds">
+              <PropertyRef Name="XeberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clouds_Teq">
+          <End Role="Teq" Type="Self.Teq" Multiplicity="1" />
+          <End Role="Clouds" Type="Self.Cloud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teq">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clouds">
+              <PropertyRef Name="TeqId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comments">
+              <PropertyRef Name="UsersId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_News_NewsCategories">
+          <End Role="NewsCategories" Type="Self.NewsCategory" Multiplicity="1" />
+          <End Role="News" Type="Self.News" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="News">
+              <PropertyRef Name="NewsCategoriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_News">
+          <End Role="News" Type="Self.News" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="News">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="XeberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsCategories_NewsCategories">
+          <End Role="NewsCategories" Type="Self.NewsCategory" Multiplicity="1" />
+          <End Role="NewsCategories1" Type="Self.NewsCategory" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NewsCategories1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_PersonelCategories">
+          <End Role="PersonelCategories" Type="Self.PersonelCategory" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonelCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reviews_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervs_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Rezervs" Type="Self.Rezerv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rezervs">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rezervs_Ziyaret">
+          <End Role="Ziyaret" Type="Self.Ziyaret" Multiplicity="1" />
+          <End Role="Rezervs" Type="Self.Rezerv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ziyaret">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rezervs">
+              <PropertyRef Name="ZiyaretId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HekimTapEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="Self.About" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Beyanats" EntityType="Self.Beyanat" />
+          <EntitySet Name="Clouds" EntityType="Self.Cloud" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="DoctorCategories" EntityType="Self.DoctorCategory" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="NewsCategories" EntityType="Self.NewsCategory" />
+          <EntitySet Name="Personels" EntityType="Self.Personel" />
+          <EntitySet Name="PersonelCategories" EntityType="Self.PersonelCategory" />
+          <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="Rezervs" EntityType="Self.Rezerv" />
+          <EntitySet Name="Teqs" EntityType="Self.Teq" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Ziyarets" EntityType="Self.Ziyaret" />
+          <AssociationSet Name="FK_Clouds_News" Association="Self.FK_Clouds_News">
+            <End Role="News" EntitySet="News" />
+            <End Role="Clouds" EntitySet="Clouds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clouds_Teq" Association="Self.FK_Clouds_Teq">
+            <End Role="Teq" EntitySet="Teqs" />
+            <End Role="Clouds" EntitySet="Clouds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_Users" Association="Self.FK_Comments_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Comments" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_News_NewsCategories" Association="Self.FK_News_NewsCategories">
+            <End Role="NewsCategories" EntitySet="NewsCategories" />
+            <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_News" Association="Self.FK_Reviews_News">
+            <End Role="News" EntitySet="News" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsCategories_NewsCategories" Association="Self.FK_NewsCategories_NewsCategories">
+            <End Role="NewsCategories" EntitySet="NewsCategories" />
+            <End Role="NewsCategories1" EntitySet="NewsCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_PersonelCategories" Association="Self.FK_Personel_PersonelCategories">
+            <End Role="PersonelCategories" EntitySet="PersonelCategories" />
+            <End Role="Personel" EntitySet="Personels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reviews_Users" Association="Self.FK_Reviews_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervs_Users" Association="Self.FK_Rezervs_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Rezervs" EntitySet="Rezervs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rezervs_Ziyaret" Association="Self.FK_Rezervs_Ziyaret">
+            <End Role="Ziyaret" EntitySet="Ziyarets" />
+            <End Role="Rezervs" EntitySet="Rezervs" />
+          </AssociationSet>
+          <EntitySet Name="Doctors" EntityType="HekimTapModel.Doctor" />
+          <AssociationSet Name="FK_Beyanat_Doctors" Association="HekimTapModel.FK_Beyanat_Doctors">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Beyanat" EntitySet="Beyanats" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comments_Doctors" Association="HekimTapModel.FK_Comments_Doctors">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Doctors_DoctorCategories" Association="HekimTapModel.FK_Doctors_DoctorCategories">
+            <End Role="DoctorCategory" EntitySet="DoctorCategories" />
+            <End Role="Doctor" EntitySet="Doctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ziyaret_Doctors" Association="HekimTapModel.FK_Ziyaret_Doctors">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Ziyaret" EntitySet="Ziyarets" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Soyad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <Property Name="Unvan" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ixdisas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Baxissayi" Type="Int32" Nullable="false" />
+          <Property Name="DoctorCategoriesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Beyanats" Relationship="HekimTapModel.FK_Beyanat_Doctors" FromRole="Doctor" ToRole="Beyanat" />
+          <NavigationProperty Name="Comments" Relationship="HekimTapModel.FK_Comments_Doctors" FromRole="Doctor" ToRole="Comment" />
+          <NavigationProperty Name="DoctorCategory" Relationship="HekimTapModel.FK_Doctors_DoctorCategories" FromRole="Doctor" ToRole="DoctorCategory" />
+          <NavigationProperty Name="Ziyarets" Relationship="HekimTapModel.FK_Ziyaret_Doctors" FromRole="Doctor" ToRole="Ziyaret" />
+        </EntityType>
+        <Association Name="FK_Beyanat_Doctors">
+          <End Type="HekimTapModel.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="HekimTapModel.Beyanat" Role="Beyanat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Beyanat">
+              <PropertyRef Name="DoctorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comments_Doctors">
+          <End Type="HekimTapModel.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="HekimTapModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="DoctorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Doctors_DoctorCategories">
+          <End Type="HekimTapModel.DoctorCategory" Role="DoctorCategory" Multiplicity="1" />
+          <End Type="HekimTapModel.Doctor" Role="Doctor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DoctorCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Doctor">
+              <PropertyRef Name="DoctorCategoriesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ziyaret_Doctors">
+          <End Type="HekimTapModel.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="HekimTapModel.Ziyaret" Role="Ziyaret" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ziyaret">
+              <PropertyRef Name="DoctorsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HekimTapModelStoreContainer" CdmEntityContainer="HekimTapEntities">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="HekimTapModel.About">
+              <MappingFragment StoreEntitySet="Abouts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+                <ScalarProperty Name="Melumat" ColumnName="Melumat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="HekimTapModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Beyanats">
+            <EntityTypeMapping TypeName="HekimTapModel.Beyanat">
+              <MappingFragment StoreEntitySet="Beyanat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ixdisas" ColumnName="Ixdisas" />
+                <ScalarProperty Name="Tehsil" ColumnName="Tehsil" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+                <ScalarProperty Name="DoctorId" ColumnName="DoctorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clouds">
+            <EntityTypeMapping TypeName="HekimTapModel.Cloud">
+              <MappingFragment StoreEntitySet="Clouds">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="XeberId" ColumnName="XeberId" />
+                <ScalarProperty Name="TeqId" ColumnName="TeqId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="HekimTapModel.Comment">
+              <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+                <ScalarProperty Name="Metn" ColumnName="Metn" />
+                <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Ulduzsayi" ColumnName="Ulduzsayi" />
+                <ScalarProperty Name="DoctorsId" ColumnName="DoctorsId" />
+                <ScalarProperty Name="UsersId" ColumnName="UsersId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="HekimTapModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="TelefonNo" ColumnName="TelefonNo" />
+                <ScalarProperty Name="Metn" ColumnName="Metn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DoctorCategories">
+            <EntityTypeMapping TypeName="HekimTapModel.DoctorCategory">
+              <MappingFragment StoreEntitySet="DoctorCategories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Ikon" ColumnName="Ikon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="HekimTapModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+                <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+                <ScalarProperty Name="Metn" ColumnName="Metn" />
+                <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+                <ScalarProperty Name="Mezmun" ColumnName="Mezmun" />
+                <ScalarProperty Name="NewsCategoriesId" ColumnName="NewsCategoriesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsCategories">
+            <EntityTypeMapping TypeName="HekimTapModel.NewsCategory">
+              <MappingFragment StoreEntitySet="NewsCategories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personels">
+            <EntityTypeMapping TypeName="HekimTapModel.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sekil" ColumnName="Sekil" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonelCategories">
+            <EntityTypeMapping TypeName="HekimTapModel.PersonelCategory">
+              <MappingFragment StoreEntitySet="PersonelCategories">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="HekimTapModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Basliq" ColumnName="Basliq" />
+                <ScalarProperty Name="Tarix" ColumnName="Tarix" />
+                <ScalarProperty Name="Metn" ColumnName="Metn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="XeberId" ColumnName="XeberId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rezervs">
+            <EntityTypeMapping TypeName="HekimTapModel.Rezerv">
+              <MappingFragment StoreEntitySet="Rezervs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="tarix" ColumnName="tarix" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ZiyaretId" ColumnName="ZiyaretId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teqs">
+            <EntityTypeMapping TypeName="HekimTapModel.Teq">
+              <MappingFragment StoreEntitySet="Teq">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HekimTapModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TelefonNo" ColumnName="TelefonNo" />
+                <ScalarProperty Name="BankKartAd" ColumnName="BankKartAd" />
+                <ScalarProperty Name="BankKartNo" ColumnName="BankKartNo" />
+                <ScalarProperty Name="KartMuhavizeKod" ColumnName="KartMuhavizeKod" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ziyarets">
+            <EntityTypeMapping TypeName="HekimTapModel.Ziyaret">
+              <MappingFragment StoreEntitySet="Ziyaret">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Novu" ColumnName="Novu" />
+                <ScalarProperty Name="Qiymet" ColumnName="Qiymet" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DoctorsId" ColumnName="DoctorsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Doctors">
+            <EntityTypeMapping TypeName="HekimTapModel.Doctor">
+              <MappingFragment StoreEntitySet="Doctors">
+                <ScalarProperty Name="DoctorCategoriesId" ColumnName="DoctorCategoriesId" />
+                <ScalarProperty Name="Baxissayi" ColumnName="Baxissayi" />
+                <ScalarProperty Name="Ixdisas" ColumnName="Ixdisas" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Unvan" ColumnName="Unvan" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

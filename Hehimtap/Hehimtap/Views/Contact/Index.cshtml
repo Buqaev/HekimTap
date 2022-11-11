@@ -1,0 +1,55 @@
+﻿@model List<Hehimtap.Models.Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int a = 1;
+}
+
+<h2>Isdifadecilerin Bizimle Elaqesi</h2>
+<div class="row">
+
+    <div class="col-md-12">
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Mail</th>
+                    <th>Telefon NO</th>
+                    <th>Metn</th>
+                    <th>Melumati Sil</th>
+               
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                
+                {
+                    <tr>
+                        <td>@a</td>
+                        <td>@x.Ad</td>
+                        <td>@x.Soyad</td>
+                        <td>@x.Mail</td>
+                        <td>@x.TelefonNo</td>
+                        <td>@x.Metn</td>
+                       
+
+                        <td><a class="btn btn-danger" href="@Url.Action("Delete","Contact", new {Id=x.Id })">Sil</a></td>
+                        
+
+                        @{a++;}
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- left column -->
+
+
+</div>
+
+

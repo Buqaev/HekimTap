@@ -1,0 +1,32 @@
+﻿@model Hehimtap.Models.Beyanat
+@{
+    ViewBag.Title = "Beyanat";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ixdisas</th>
+                    <th>Tehsil</th>
+                    <th>Sekil</th>
+                    <th>Duyme</th>
+                </tr>
+
+            </thead>
+            <tr>
+                <td>@Model.Ixdisas</td>
+                <td>@Model.Tehsil</td>
+                <td><img src="~/Images/@Model.Sekil" height="50" /></td>
+                <td>
+
+                    <a class="btn btn-primary" href="@Url.Action("BeyanatGetir","RegisterDoctor", new {Id=Model.Id })">Yenile</a>
+
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    </div>

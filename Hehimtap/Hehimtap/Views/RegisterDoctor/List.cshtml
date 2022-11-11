@@ -1,0 +1,38 @@
+﻿@model Hehimtap.Models.Doctor
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+}
+
+<h2>List</h2>
+
+<div class="content-wrapper">
+    <div class="container">
+        <table class="table table-active">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyadi</th>
+                    <th>Mail</th>
+                    <th>Unvan</th>
+                    <th>TelefonNo</th>
+                    <th>Ixdisas</th>
+                    <th>Sifre</th>
+                    <th>Duyme</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>@Model.Ad</td>
+                <td>@Model.Soyad</td>
+                <td>@Model.Mail</td>
+                <td>@Model.Unvan</td>
+                <td>@Model.Telefon</td>
+                <td>@Model.Ixdisas</td>
+                <td>@Model.Sifre</td>
+                <td>
+                    <a class="btn btn-primary" href="@Url.Action("YenilemeniGetir","RegisterDoctor", new {Id=Model.Id })">Yenile</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </div>

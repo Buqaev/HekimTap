@@ -1,0 +1,200 @@
+﻿@model Hehimtap.Models.News2Dto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_IsdifadeciLayout.cshtml";
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from www.ansonika.com/findoctor/menu_2/blog-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 12:21:51 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find easily a doctor and book online an appointment">
+    <meta name="author" content="Ansonika">
+    <title>FINDOCTOR - Find easily a doctor and book online an appointment</title>
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="~/Hekim/menu_2/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="~/Hekim/menu_2/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/Hekim/menu_2/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/Hekim/menu_2/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/Hekim/menu_2/img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="~/Hekim/menu_2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Hekim/menu_2/css/style.css" rel="stylesheet">
+    <link href="~/Hekim/menu_2/css/menu.css" rel="stylesheet">
+    <link href="~/Hekim/menu_2/css/vendors.css" rel="stylesheet">
+    <link href="~/Hekim/menu_2/css/icon_fonts/css/all_icons_min.css" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="~/Hekim/menu_2/css/blog.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="~/Hekim/menu_2/css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <main>
+        <div id="breadcrumb">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li>Page active</li>
+                </ul>
+            </div>
+        </div>
+        <!-- /breadcrumb -->
+
+        <div class="container margin_60">
+            <div class="main_title">
+                <h1>Hekim Xeberleri</h1>
+                <p>Asagida Hekimlerimiz terefinde verilen melumatlara , gunerzinde riayet etmeniz tovsiye edilir</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    @foreach (var x in Model.news)
+                    {
+                        <article class="blog wow fadeIn">
+                            <div class="row g-0">
+                                <div class="col-lg-7">
+                                    <figure>
+                                        <a href="@Url.Action("NewsDetay","FindXeberler",new {Id=x.Id})"><img src="~/Images/@x.Sekil" alt=""><div class="preview"><span>Read more</span></div></a>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="post_info">
+                                        <small>@x.Tarix</small>
+                                        <h3><a href="blog-post.html">@x.Mezmun</a></h3>
+                                        <p>@x.Metn</p>
+                                        <ul>
+                                            <li>
+                                                <div class="thumb"><img src="img/thumb_blog.jpg" alt=""></div> Jessica Hoops
+                                            </li>
+                                            <li><i class="icon_comment_alt"></i> 20</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- /article -->
+
+                    }
+
+                    <!-- /article -->
+
+                    <nav aria-label="...">
+                        <ul class="pagination pagination-sm">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /pagination -->
+                </div>
+                <!-- /col -->
+
+                <aside class="col-lg-3">
+                    <div class="widget">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+                            </div>
+                            <button type="submit" id="submit" class="btn_1"> P den geldi</button>
+                        </form>
+                    </div>
+                    <!-- /widget -->
+
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h4>Recent Posts</h4>
+                        </div>
+                        <ul class="comments-list">
+                            @foreach (var x in Model.Clouds)
+                            {
+                                <li>
+                                    <div class="alignleft">
+                                        <a href="#0"><img src="~/Images/@x.News.Sekil" alt=""></a>
+                                    </div>
+                                    <small>Xeber: @x.News.Tarix</small><br />
+
+                                    <small>Teq: @x.Teq.Ad</small>
+                                    <h3><a href="#" title=""></a></h3>
+                                    <h3><a href="#" title=""> @x.News.Basliq</a></h3>
+                                </li>
+                            }
+
+                            
+                        </ul>
+                    </div>
+                    <!-- /widget -->
+
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h4>Blog Categories</h4>
+                        </div>
+                        <ul class="cats">
+                            <li><a href="#">Treatments <span>(@ViewBag.cs)</span></a></li>
+                            <li><a href="#">News <span>(@ViewBag.cs)</span></a></li>
+                            <li><a href="#">Events <span>(44)</span></a></li>
+                            <li><a href="#">New treatments <span>(09)</span></a></li>
+                            <li><a href="#">Focus in the lab <span>(31)</span></a></li>
+                        </ul>
+                    </div>
+                    <!-- /widget -->
+                    
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h4>Mehsur Tags</h4>
+                        </div>
+                        
+                        <div class="tags">
+                            @foreach (var x in Model.Teqs)
+                            {
+                                <a href="#">@x.Ad</a>
+                            }
+                            </div>
+                        
+
+                    </div>
+                    
+
+                    <!-- /widget -->
+
+                </aside>
+
+                <!-- /aside -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </main>
+
+
+</body>
+
+</html>
+
+
